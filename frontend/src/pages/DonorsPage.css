@@ -1,0 +1,674 @@
+.donors-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    background: #f7f5f0;
+    color: #24221f;
+    box-sizing: border-box;
+}
+
+.donors-page *,
+.donors-page *::before,
+.donors-page *::after {
+    box-sizing: border-box;
+}
+
+.donors-page .dashboard-sidebar {
+    width: 228px;
+    min-height: 100vh;
+    flex-shrink: 0;
+    background: #ffffff;
+    border-right: 1px solid #e6e1d8;
+    display: flex;
+    flex-direction: column;
+}
+
+.donors-page .sidebar-brand {
+    height: 82px;
+    flex-shrink: 0;
+    padding: 0 26px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    border-bottom: 1px solid #eee9e1;
+    font-size: 16px;
+    font-weight: 700;
+    color: #171717;
+}
+
+.donors-page .brand-icon {
+    width: 29px;
+    height: 29px;
+    border-radius: 7px;
+    background: #f45a42;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.donors-page .sidebar-navigation {
+    padding: 25px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.donors-page .sidebar-link {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 12px 15px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+    color: #625d58;
+    cursor: pointer;
+}
+
+.donors-page .sidebar-link:hover {
+    background: #f7f4ef;
+    color: #24221f;
+}
+
+.donors-page .sidebar-link.active {
+    background: #f45a42;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.donors-page .sidebar-icon {
+    width: 20px;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 13px;
+}
+
+.donors-page .sidebar-bottom {
+    margin-top: auto;
+    padding: 18px 10px;
+    border-top: 1px solid #eee9e1;
+}
+
+.donors-page .sign-out-button {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 11px 15px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #625d58;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.donors-page .sign-out-button:hover {
+    background: #f7f4ef;
+    color: #24221f;
+}
+
+.donors-main {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+}
+
+.donors-header {
+    min-height: 82px;
+    background: #ffffff;
+    border-bottom: 1px solid #e6e1d8;
+    padding: 0 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.festival-selector-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.festival-selector-wrapper label {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: #9a948c;
+}
+
+.festival-selector-wrapper select {
+    min-width: 230px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: #24221f;
+    cursor: pointer;
+}
+
+.new-festival-button {
+    border: none;
+    background: #f45a42;
+    color: #ffffff;
+    padding: 9px 15px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.new-festival-button:hover {
+    background: #e94f38;
+}
+
+.donors-content {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 32px 26px 42px;
+}
+
+.donors-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 24px;
+}
+
+.dashboard-label {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    color: #9a948c;
+    margin-bottom: 8px;
+}
+
+.donors-top h1 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.15;
+    font-weight: 500;
+    letter-spacing: -0.7px;
+    color: #17202b;
+}
+
+.donors-top p {
+    margin: 7px 0 0;
+    color: #8a847c;
+    font-size: 12px;
+}
+
+.add-donor-button {
+    flex-shrink: 0;
+    border: none;
+    background: #f45a42;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-donor-button:hover {
+    background: #e94f38;
+}
+
+.donor-error {
+    margin-bottom: 18px;
+    padding: 12px 15px;
+    border: 1px solid #e4cfc8;
+    background: #faf2ef;
+    color: #8c4435;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.donor-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+    margin-bottom: 10px;
+}
+
+.summary-card {
+    min-height: 92px;
+    background: #ffffff;
+    border: 1px solid #e5e0d8;
+    border-radius: 7px;
+    padding: 18px 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.summary-card span {
+    display: flex;
+    align-items: center;
+    color: #938d85;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.summary-card span::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background: #62ad73;
+}
+
+.summary-card:first-child span::before {
+    background: #9a948c;
+}
+
+.summary-card strong {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 500;
+    color: #17202b;
+}
+
+.donor-list-panel {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e5e0d8;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.panel-title {
+    padding: 17px 19px;
+    border-bottom: 1px solid #ebe6de;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: #77716a;
+}
+
+.donor-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.donor-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.donor-table th {
+    background: #faf8f4;
+    color: #918b83;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.9px;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e9e4dc;
+    white-space: nowrap;
+}
+
+.donor-table td {
+    padding: 14px 16px;
+    font-size: 12px;
+    color: #49453f;
+    border-bottom: 1px solid #eee9e1;
+    white-space: nowrap;
+}
+
+.donor-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.donor-table tbody tr:hover {
+    background: #fcfbf8;
+}
+
+.donor-amount {
+    font-weight: 600;
+    color: #24221f;
+}
+
+.empty-state {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #a09a92;
+    font-size: 11px;
+}
+
+.empty-icon {
+    width: 46px;
+    height: 46px;
+    border: 1px solid #e9e4dc;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #aaa39b;
+}
+
+.donors-loading {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f5f0;
+    color: #77716a;
+    font-size: 13px;
+}
+
+.donor-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(20, 18, 16, 0.45);
+    backdrop-filter: blur(2px);
+}
+
+.donor-modal {
+    width: 100%;
+    max-width: 500px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 9px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+
+.donor-modal-header {
+    padding: 19px 21px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ebe7e3;
+}
+
+.donor-modal-eyebrow {
+    display: block;
+    margin-bottom: 4px;
+    color: #999;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.donor-modal-header h2 {
+    margin: 0;
+    color: #222;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.donor-modal-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: #888;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.donor-modal-close:hover {
+    background: #f5f2ec;
+    color: #222;
+}
+
+.donor-modal .donor-form {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    border: none;
+    background: #ffffff;
+    border-radius: 0;
+}
+
+.donor-modal .donor-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.donor-modal .donor-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.donor-modal .donor-form-group label {
+    color: #5e5954;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.donor-modal .donor-form-group input,
+.donor-modal .donor-form-group select,
+.donor-modal .donor-form-group textarea {
+    width: 100%;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid #ddd8d3;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #333;
+    font-family: inherit;
+    font-size: 10px;
+    outline: none;
+}
+
+.donor-modal .donor-form-group textarea {
+    height: auto;
+    min-height: 80px;
+    padding: 10px;
+    resize: vertical;
+}
+
+.donor-modal .donor-form-group input:focus,
+.donor-modal .donor-form-group select:focus,
+.donor-modal .donor-form-group textarea:focus {
+    border-color: #ea5b3c;
+}
+
+.donor-modal-footer {
+    padding-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.donor-cancel-button,
+.donor-submit-button {
+    height: 34px;
+    padding: 0 14px;
+    border-radius: 5px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.donor-cancel-button {
+    border: 1px solid #ddd8d3;
+    background: #ffffff;
+    color: #666;
+}
+
+.donor-cancel-button:hover {
+    background: #f7f5f0;
+}
+
+.donor-submit-button {
+    border: none;
+    background: #ea5b3c;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.donor-submit-button:hover {
+    background: #d94f32;
+}
+
+.donor-submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 1100px) {
+
+    .donors-page .dashboard-sidebar {
+        width: 220px;
+    }
+
+    .donors-content {
+        padding: 30px 28px 40px;
+    }
+
+    .donors-header {
+        padding: 0 30px;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .donors-page .dashboard-sidebar {
+        width: 210px;
+    }
+
+    .donors-content {
+        padding: 28px;
+    }
+
+    .donors-header {
+        padding: 0 28px;
+    }
+
+    .donor-modal .donor-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .donors-page {
+        display: block;
+    }
+
+    .donors-page .dashboard-sidebar {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .donors-page .sidebar-brand {
+        height: 70px;
+    }
+
+    .donors-page .sidebar-navigation {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 12px;
+    }
+
+    .donors-page .sidebar-link {
+        width: auto;
+        flex-shrink: 0;
+    }
+
+    .donors-page .sidebar-bottom {
+        display: none;
+    }
+
+    .donors-header {
+        min-height: auto;
+        padding: 20px;
+        gap: 15px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .festival-selector-wrapper select {
+        min-width: 180px;
+    }
+
+    .donors-content {
+        padding: 24px 20px;
+    }
+
+    .donors-top {
+        align-items: flex-start;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .donors-top h1 {
+        font-size: 28px;
+    }
+
+    .add-donor-button {
+        align-self: flex-start;
+    }
+
+    .donor-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .donor-modal-overlay {
+        padding: 12px;
+    }
+
+    .donor-modal {
+        max-height: calc(100vh - 24px);
+    }
+}
+
+@media (max-width: 450px) {
+
+    .donors-content {
+        padding: 20px 14px;
+    }
+
+    .donors-top h1 {
+        font-size: 25px;
+    }
+
+    .donor-modal-header {
+        padding: 17px;
+    }
+
+    .donor-modal .donor-form {
+        padding: 17px;
+    }
+}

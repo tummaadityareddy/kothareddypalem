@@ -1,0 +1,188 @@
+.new-festival-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(20, 18, 16, 0.45);
+    backdrop-filter: blur(2px);
+}
+
+.new-festival-modal {
+    width: 100%;
+    max-width: 500px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow:0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.new-festival-modal-header {
+    padding: 19px 21px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ebe7e3;
+}
+
+.new-festival-modal-eyebrow {
+    display: block;
+    margin-bottom: 4px;
+    color: #99918a;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.new-festival-modal-header h2 {
+    margin: 0;
+    color: #222;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.new-festival-modal-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: #888;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.new-festival-modal-close:hover {
+    background: #f5f2ec;
+    color: #222;
+}
+
+.new-festival-form {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    border: none;
+    background: #ffffff;
+}
+
+.new-festival-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.new-festival-form-group label {
+    color: #5e5954;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.new-festival-form-group input,
+.new-festival-form-group textarea {
+    width: 100%;
+    border: 1px solid #ddd8d3;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #333;
+    font-family: inherit;
+    font-size: 10px;
+    outline: none;
+}
+
+.new-festival-form-group input {
+    height: 36px;
+    padding: 0 10px;
+}
+
+.new-festival-form-group textarea {
+    min-height: 80px;
+    padding: 10px;
+    resize: vertical;
+}
+
+.new-festival-form-group input:focus,
+.new-festival-form-group textarea:focus {
+    border-color: #ea5b3c;
+}
+
+.new-festival-error {
+    width: 100%;
+    margin-bottom: 14px;
+    padding: 11px 13px;
+    border: 1px solid #e5cfc8;
+    border-radius: 6px;
+    background: #faf2ef;
+    color: #984b3d;
+    font-size: 12px;
+}
+
+.new-festival-modal-footer {
+    padding-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.new-festival-cancel-button,
+.new-festival-submit-button {
+    height: 34px;
+    padding: 0 14px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.new-festival-cancel-button {
+    border: 1px solid #ddd8d3;
+    background: #ffffff;
+    color: #666;
+}
+
+.new-festival-cancel-button:hover {
+    background: #f7f5f0;
+}
+
+.new-festival-submit-button {
+    border: none;
+    background: #f45b43;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.new-festival-submit-button:hover {
+    background: #e94f38;
+}
+
+.new-festival-submit-button:disabled,
+.new-festival-cancel-button:disabled,
+.new-festival-modal-close:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+
+    .new-festival-modal-overlay {
+        padding: 12px;
+    }
+
+    .new-festival-modal {
+        max-height: calc(100vh - 24px);
+    }
+
+    .new-festival-modal-header {
+        padding: 17px;
+    }
+
+    .new-festival-form {
+        padding: 17px;
+    }
+}

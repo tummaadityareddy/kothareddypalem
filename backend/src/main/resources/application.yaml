@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: kothareddypalem-backend
+  datasource:
+    url: jdbc:postgresql://localhost:5433/kothareddypalem
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: false
+
+    properties:
+      hibernate:
+        format_sql: false
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            scope:
+              - openid
+              - profile
+              - email
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+
+
+server:
+  port: 8080
+
+jwt:
+  secret: YOUR_LONG_SECRET_KEY_FOR_KOTHAREDDYPALEM_APPLICATION
+  expiration: 86400000
+
