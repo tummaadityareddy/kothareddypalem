@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
-import {getMyFestivals, getFestivalReport, type FestivalResponse, type ReportResponse,} from "../services/api";
+import {getMyFestivals, getFestivalReport, type FestivalResponse, type ReportResponse, type CurrentUser, getCurrentUser,} from "../services/api";
 import NewFestivalModal from "../components/NewFestivalModal";
 import "./ReportsPage.css";
 
@@ -15,8 +15,10 @@ function ReportsPage() {
     const [loading, setLoading] = useState(true);
     const [reportLoading, setReportLoading] = useState(false);
     const [error, setError] = useState("");
+    const [user, setUser] = useState<CurrentUser | null>(null);
 
     useEffect(() => {
+        loadCurrentUser();
         loadFestivals();
     }, []);
 
@@ -44,7 +46,21 @@ function ReportsPage() {
             setLoading(false);
         }
     };
-
+const loadCurrentUser = async () => {
+        try {
+            const token = localStorage.getItem("token");
+            if (!token) {
+                navigate("/login");
+                return;
+            }
+            const currentUser = await getCurrentUser(token);
+            setUser(currentUser);
+        } catch (error) {
+            console.error("Failed to load current user:",error);
+            localStorage.removeItem("token");
+            navigate("/login");
+        }
+    };
     const loadReport = async (festivalId: number) => {
         try {
             setReportLoading(true);
@@ -112,7 +128,7 @@ function ReportsPage() {
         doc.setFont( "helvetica", "bold");
         doc.setFontSize(18);
         doc.setTextColor(...COLORS.text);
-        doc.text("Utsav Ledger - Festival Report", margin + 6, 20);
+        doc.text("Kothareddypalem - Festival Report", margin + 6, 20);
         doc.setFont( "helvetica", "normal");
         doc.setFontSize(10);
         doc.setTextColor(...COLORS.grayText);
@@ -457,10 +473,27 @@ function ReportsPage() {
                     </button>
                 </nav>
                 <div className="sidebar-bottom">
+
+                    {/* USER */}
+                    <div className="user-profile">
+                        <div className="user-avatar">
+                            {user?.name ?.charAt(0).toUpperCase() || "U"}
+                        </div>
+                        <div className="user-details">
+                            <div className="user-name">
+                                {user?.name || "User"}
+                            </div>
+                            <div className="user-email">
+                                {user?.email || ""}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* SIGN OUT */}
                     <button
                         className="sign-out-button"
                         onClick={handleSignOut}>
-                        <span>↪</span>Sign out
+                            <span>↪</span>Sign out
                     </button>
                 </div>
             </aside>

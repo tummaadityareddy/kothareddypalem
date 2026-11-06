@@ -132,7 +132,12 @@
     cursor: pointer;
     font-size: 13px;
 }
-
+.sidebar-brand span {
+    color: #202124;
+    font-size: 17px;
+    font-weight: 700;
+    white-space: nowrap;
+}
 .dashboard-main {
     flex: 1;
     min-width: 0;
@@ -156,40 +161,50 @@
 .festival-selector-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 7px;
 }
 
 .festival-selector-wrapper label {
+    color: #999999;
     font-size: 9px;
-    color: #888;
-    letter-spacing: 0.08em;
+    font-weight: 700;
+    letter-spacing: 1.6px;
 }
 
 .festival-selector-wrapper select {
-    width: 165px;
-    height: 38px;
-    padding: 0 11px;
-    border: 1px solid #ddd8d0;
-    border-radius: 5px;
-    background: white;
-    font-size: 13px;
-    color: #111827;
-    outline: none;
-}
-
-.new-festival-button {
+     min-width: 280px;
+    padding: 0;
     border: none;
-    background: #f45b43;
-    color: white;
-    border-radius: 20px;
-    padding: 9px 17px;
-    font-size: 12px;
+    outline: none;
+    background: transparent;
+    color: #202124;
+    font-family: inherit;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
 }
 
+.new-festival-button {
+    height: 40px;
+    padding: 0 17px;
+    border: none;
+    border-radius: 7px;
+    background: #f4513d;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
 .new-festival-button:hover {
-    background: #e84e37;
+   background: #e54835;
+}
+.new-festival-button:active {
+    transform: translateY(1px);
 }
 
 .dashboard-content {
@@ -394,7 +409,7 @@
         grid-template-columns: 1fr 1fr;
     }
 
-    .primary-stats
+    .primary-stats,
     .stat-card:last-child {
         grid-column: span 2;
     }
@@ -457,7 +472,7 @@
         grid-template-columns: 1fr;
     }
 
-    .primary-stats
+    .primary-stats,
     .stat-card:last-child,
     .fund-health-card {
         grid-column: auto;

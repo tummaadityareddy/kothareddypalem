@@ -1,9 +1,238 @@
 .expenses-page {
-    min-height: 100vh;
-    width: 100%;
+    background: #faf9f6;
+}
+
+.expenses-page .dashboard-sidebar {
+    width: 208px;
+    min-width: 208px;
+    height: 100vh;
+    flex-shrink: 0;
+    background: #fffefa;
+    border-right: 1px solid #e7e3dc;
     display: flex;
-    background: #f7f5f0;
-    color: #24221f;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
+.expenses-page .sidebar-brand {
+    height: 92px;
+    min-height: 92px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.expenses-page .brand-icon {
+    color: #f45b43;
+    font-size: 22px;
+}
+
+.expenses-page .sidebar-navigation {
+    padding: 10px 9px;
+}
+
+.expenses-page .sidebar-link {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 14px 16px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: #172033;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.expenses-page .sidebar-link:hover {
+    background: #fff0ec;
+}
+
+.expenses-page .sidebar-link.active {
+    background: #f45b43;
+    color: white;
+}
+
+.expenses-page .sidebar-icon {
+    width: 16px;
+    text-align: center;
+}
+
+.expenses-page .sidebar-bottom {
+    margin-top: auto;
+    border-top: 1px solid #e7e3dc;
+    padding: 22px 16px 18px;
+    flex-shrink: 0;
+}
+
+.expenses-page .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 22px;
+    min-width: 0;
+}
+
+.expenses-page .user-avatar {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 50%;
+    background: #f0ede7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.expenses-page .user-details {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.expenses-page .user-name {
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.expenses-page .user-email {
+    margin-top: 3px;
+    font-size: 10px;
+    color: #777;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.expenses-page .sign-out-button {
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 2px;
+    color: #283142;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.expenses-header {
+    height: 82px;
+    min-height: 82px;
+    border-bottom: 1px solid #e7e3dc;
+    background: #fffefa;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+.expenses-header .festival-selector-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.expenses-header .festival-selector-wrapper label {
+    color: #999999;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.expenses-header .festival-selector-wrapper select {
+    min-width: 280px;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #202124;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.expenses-header .new-festival-button {
+    height: 40px;
+    padding: 0 17px;
+    border: none;
+    border-radius: 7px;
+    background: #f4513d;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+.expenses-header .new-festival-button:hover {
+    background: #e54835;
+}
+.expenses-header .new-festival-button:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 1000px) {
+    .expenses-page .dashboard-sidebar {
+        width: 180px;
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 700px) {
+    .expenses-page .dashboard-sidebar {
+        width: 70px;
+        min-width: 70px;
+    }
+
+    .expenses-page .sidebar-brand span,
+    .expenses-page .sidebar-link {
+        font-size: 0;
+    }
+
+    .expenses-page .sidebar-brand {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .expenses-page .sidebar-link {
+        justify-content: center;
+        padding: 14px 0;
+    }
+
+    .expenses-page .user-details,
+    .expenses-page .sign-out-button {
+        display: none;
+    }
+
+    .expenses-page .user-profile {
+        justify-content: center;
+    }
+}
+
+.expenses-page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    color: #202124;
     box-sizing: border-box;
 }
 
@@ -12,170 +241,20 @@
 .expenses-page *::after {
     box-sizing: border-box;
 }
-
-.expenses-page .dashboard-sidebar {
-    width: 228px;
-    min-height: 100vh;
-    flex-shrink: 0;
-    background: #ffffff;
-    border-right: 1px solid #e6e1d8;
-    display: flex;
-    flex-direction: column;
-}
-
-.expenses-page .sidebar-brand {
-    height: 82px;
-    flex-shrink: 0;
-    padding: 0 26px;
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    border-bottom: 1px solid #eee9e1;
-    font-size: 16px;
+.expenses-page .sidebar-brand span {
+    color: #202124;
+    font-size: 17px;
     font-weight: 700;
-    color: #171717;
-}
-
-.expenses-page .brand-icon {
-    width: 29px;
-    height: 29px;
-    border-radius: 7px;
-    background: #f45a42;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-}
-
-.expenses-page .sidebar-navigation {
-    padding: 25px 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.expenses-page .sidebar-link {
-    width: 100%;
-    border: none;
-    background: transparent;
-    padding: 12px 15px;
-    border-radius: 7px;
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    text-align: left;
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 400;
-    color: #625d58;
-    cursor: pointer;
-    transition:
-        background 0.15s ease,
-        color 0.15s ease;
-}
-
-.expenses-page .sidebar-link:hover {
-    background: #f7f4ef;
-    color: #24221f;
-}
-
-.expenses-page .sidebar-link.active {
-    background: #f45a42;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.expenses-page .sidebar-icon {
-    width: 20px;
-    flex-shrink: 0;
-    text-align: center;
-    font-size: 13px;
-}
-
-.expenses-page .sidebar-bottom {
-    margin-top: auto;
-    padding: 18px 10px;
-    border-top: 1px solid #eee9e1;
-}
-
-.expenses-page .sign-out-button {
-    width: 100%;
-    border: none;
-    background: transparent;
-    padding: 11px 15px;
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    color: #625d58;
-    font-family: inherit;
-    font-size: 13px;
-    cursor: pointer;
-    border-radius: 7px;
-}
-
-.expenses-page .sign-out-button:hover {
-    background: #f7f4ef;
-    color: #24221f;
+    white-space: nowrap;
 }
 
 .expenses-main {
     flex: 1;
     min-width: 0;
     min-height: 100vh;
-}
-
-.expenses-header {
-    min-height: 82px;
-    background: #ffffff;
-    border-bottom: 1px solid #e6e1d8;
-    padding: 0 42px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.festival-selector-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.festival-selector-wrapper label {
-    font-size: 8px;
-    font-weight: 700;
-    letter-spacing: 1.4px;
-    color: #9a948c;
-}
-
-.festival-selector-wrapper select {
-    min-width: 230px;
-    border: none;
-    outline: none;
-    background: transparent;
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 600;
-    color: #24221f;
-    cursor: pointer;
-}
-
-.new-festival-button {
-    border: none;
-    background: #f45a42;
-    color: #ffffff;
-    padding: 9px 15px;
-    border-radius: 6px;
-    font-family: inherit;
-    font-size: 11px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.15s ease;
-}
-
-.new-festival-button:hover {
-    background: #e94f38;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .expenses-content {
@@ -556,35 +635,20 @@
 
 @media (max-width: 1100px) {
 
-    .expenses-page .dashboard-sidebar {
-        width: 220px;
-    }
-
-    .expenses-content {
+.expenses-content {
         padding: 30px 28px 40px;
     }
 
-    .expenses-header {
-        padding: 0 30px;
-    }
 }
 
 
 @media (max-width: 900px) {
 
-    .expenses-page .dashboard-sidebar {
-        width: 210px;
-    }
-
-    .expenses-content {
+.expenses-content {
         padding: 28px;
     }
 
-    .expenses-header {
-        padding: 0 28px;
-    }
-
-    .expense-modal .expense-form-row {
+.expense-modal .expense-form-row {
         grid-template-columns: 1fr;
         gap: 0;
     }
@@ -597,43 +661,7 @@
         display: block;
     }
 
-    .expenses-page .dashboard-sidebar {
-        width: 100%;
-        min-height: auto;
-    }
-
-    .expenses-page .sidebar-brand {
-        height: 70px;
-    }
-
-    .expenses-page .sidebar-navigation {
-        flex-direction: row;
-        overflow-x: auto;
-        padding: 12px;
-    }
-
-    .expenses-page .sidebar-link {
-        width: auto;
-        flex-shrink: 0;
-    }
-
-    .expenses-page .sidebar-bottom {
-        display: none;
-    }
-
-    .expenses-header {
-        min-height: auto;
-        padding: 20px;
-        gap: 15px;
-        align-items: flex-start;
-        flex-wrap: wrap;
-    }
-
-    .festival-selector-wrapper select {
-        min-width: 180px;
-    }
-
-    .expenses-content {
+.expenses-content {
         padding: 24px 20px;
     }
 
