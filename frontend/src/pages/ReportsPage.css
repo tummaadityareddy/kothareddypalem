@@ -1,48 +1,230 @@
 .reports-page {
+    background: #faf9f6;
+}
+
+.reports-page .dashboard-sidebar {
+   width: 208px;
+    min-width: 208px;
+    height: 100vh;
+    flex-shrink: 0;
+    background: #fffefa;
+    border-right: 1px solid #e7e3dc;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
+.reports-page .sidebar-brand {
+    height: 92px;
+    min-height: 92px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.reports-page .brand-icon {
+    color: #f45b43;
+    font-size: 22px;
+}
+
+.reports-page .sidebar-navigation {
+    padding: 10px 9px;
+}
+
+.reports-page .sidebar-link {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 14px 16px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: #172033;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.reports-page .sidebar-link:hover {
+    background: #fff0ec;
+}
+
+.reports-page .sidebar-link.active {
+    background: #f45b43;
+    color: white;
+}
+
+.reports-page .sidebar-icon {
+    width: 16px;
+    text-align: center;
+}
+
+.reports-page .sidebar-bottom {
+    margin-top: auto;
+    border-top: 1px solid #e7e3dc;
+    padding: 22px 16px 18px;
+    flex-shrink: 0;
+}
+
+.reports-page .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 22px;
+    min-width: 0;
+}
+
+.reports-page .user-avatar {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 50%;
+    background: #f0ede7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.reports-page .user-details {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.reports-page .user-name {
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.reports-page .user-email {
+    margin-top: 3px;
+    font-size: 10px;
+    color: #777;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.reports-page .sign-out-button {
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 2px;
+    color: #283142;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.reports-header {
+    height: 82px;
+    min-height: 82px;
+    border-bottom: 1px solid #e7e3dc;
+    background: #fffefa;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+.reports-header .festival-selector-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.reports-header .festival-selector-wrapper label {
+    font-size: 9px;
+    color: #888;
+    letter-spacing: 0.08em;
+}
+
+.reports-header .festival-selector-wrapper select {
+    width: 165px;
+    min-width: 0;
+    height: 38px;
+    padding: 0 11px;
+    border: 1px solid #ddd8d0;
+    border-radius: 5px;
+    background: white;
+    font-size: 13px;
+    color: #111827;
+    outline: none;
+}
+
+.reports-header .new-festival-button {
+    border: none;
+    background: #f45b43;
+    color: white;
+    border-radius: 20px;
+    padding: 9px 17px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.reports-header .new-festival-button:hover {
+    background: #e84e37;
+}
+
+@media (max-width: 1000px) {
+    .reports-page .dashboard-sidebar {
+        width: 180px;
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 700px) {
+    .reports-page .dashboard-sidebar {
+        width: 70px;
+        min-width: 70px;
+    }
+
+    .reports-page .sidebar-brand span,
+    .reports-page .sidebar-link {
+        font-size: 0;
+    }
+
+    .reports-page .sidebar-brand {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .reports-page .sidebar-link {
+        justify-content: center;
+        padding: 14px 0;
+    }
+
+    .reports-page .user-details,
+    .reports-page .sign-out-button {
+        display: none;
+    }
+
+    .reports-page .user-profile {
+        justify-content: center;
+    }
+}
+
+.reports-page {
     width: 100%;
     min-height: 100vh;
     display: flex;
     margin: 0;
     padding: 0;
-    background: #f7f5f1;
+
     color: #202124;
     box-sizing: border-box;
-}
-
-.reports-page .dashboard-sidebar {
-    width: 250px;
-    min-width: 250px;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    background: #ffffff;
-    border-right: 1px solid #e2ded9;
-    box-sizing: border-box;
-}
-
-.reports-page .sidebar-brand {
-    height: 112px;
-    padding: 0 30px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-bottom: 1px solid #eeeae6;
-    box-sizing: border-box;
-}
-
-.reports-page .brand-icon {
-    width: 34px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    background: #f4513d;
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 1;
 }
 
 .reports-page .sidebar-brand span {
@@ -52,103 +234,13 @@
     white-space: nowrap;
 }
 
-.reports-page .sidebar-navigation {
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    box-sizing: border-box;
-}
-
-.reports-page .sidebar-link {
-    width: 100%;
-    height: 50px;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    border: none;
-    border-radius: 8px;
-    background: transparent;
-    color: #555555;
-    font-family: inherit;
-    font-size: 15px;
-    font-weight: 500;
-    text-align: left;
-    cursor: pointer;
-    box-sizing: border-box;
-    transition:
-        background 0.15s ease,
-        color 0.15s ease;
-}
-
-.reports-page .sidebar-link:hover {
-    background: #faf7f4;
-    color: #202124;
-}
-
-.reports-page .sidebar-link.active {
-    background: #f4513d;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.reports-page .sidebar-icon {
-    width: 18px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    line-height: 1;
-    flex-shrink: 0;
-}
-
-.reports-page .sidebar-bottom {
-    margin-top: auto;
-    padding: 18px 10px 22px;
-    border-top: 1px solid #eeeae6;
-    box-sizing: border-box;
-}
-
-.reports-page .sign-out-button {
-    width: 100%;
-    height: 46px;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    border: none;
-    border-radius: 8px;
-    background: transparent;
-    color: #555555;
-    font-family: inherit;
-    font-size: 14px;
-    cursor: pointer;
-    text-align: left;
-}
-
-.reports-page .sign-out-button:hover {
-    background: #faf7f4;
-    color: #202124;
-}
-
 .reports-main {
     flex: 1;
     min-width: 0;
     min-height: 100vh;
-    background: #f7f5f1;
-    box-sizing: border-box;
-}
-
-.reports-header {
-    height: 90px;
-    padding: 0 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #ffffff;
-    border-bottom: 1px solid #e2ded9;
-    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .reports-header .festival-selector-wrapper {
@@ -189,8 +281,8 @@
     font-weight: 600;
     cursor: pointer;
     transition:
-        background 0.15s ease,
-        transform 0.1s ease;
+    background 0.15s ease,
+    transform 0.1s ease;
 }
 
 .reports-header .new-festival-button:hover {
@@ -210,13 +302,11 @@
 }
 
 .reports-top {
-    width: 100%;
-    margin-bottom: 26px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 20px;
-    box-sizing: border-box;
+    gap: 30px;
+    margin-bottom: 24px;
 }
 
 .reports-top .dashboard-label {
@@ -229,12 +319,12 @@
 }
 
 .reports-top h1 {
-    margin: 0;
-    color: #202124;
+   margin: 0;
     font-size: 32px;
     line-height: 1.15;
-    font-weight: 700;
-    letter-spacing: -0.6px;
+    font-weight: 500;
+    letter-spacing: -0.7px;
+    color: #17202b;
 }
 
 .reports-top p {
@@ -503,16 +593,7 @@
 
 @media (max-width: 900px) {
 
-    .reports-page .dashboard-sidebar {
-        width: 210px;
-        min-width: 210px;
-    }
-
-    .reports-header {
-        padding-right: 25px;
-    }
-
-    .reports-content {
+.reports-content {
         padding: 30px 20px 40px;
     }
 
@@ -545,32 +626,7 @@
         display: block;
     }
 
-    .reports-page .dashboard-sidebar {
-        width: 100%;
-        min-width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-    .reports-page .sidebar-brand {
-        height: 75px;
-    }
-
-    .reports-page .sidebar-navigation {
-        padding: 10px;
-    }
-
-    .reports-page .sidebar-bottom {
-        display: none;
-    }
-
-    .reports-header {
-        height: auto;
-        min-height: 90px;
-        padding: 20px;
-    }
-
-    .reports-header .festival-selector-wrapper select {
+.reports-header .festival-selector-wrapper select {
         min-width: 200px;
     }
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {createExpense, getMyExpenses, getMyFestivals, type ExpenseResponse, type FestivalResponse, } from "../services/api";
+import {createExpense, getCurrentUser, getMyExpenses, getMyFestivals, type CurrentUser, type ExpenseResponse, type FestivalResponse, } from "../services/api";
 import NewFestivalModal from "../components/NewFestivalModal";
 import "./ExpensesPage.css";
 
@@ -19,13 +19,30 @@ function ExpensesPage() {
     const [description, setDescription] = useState("");
     const [expenseDate, setExpenseDate] = useState(new Date().toISOString().split("T")[0]);
     const [saving, setSaving] = useState(false);
+    const [user, setUser] = useState<CurrentUser | null>(null);
 
-    useEffect(() => {loadFestivals();}, []);
+    useEffect(() => {loadCurrentUser(); loadFestivals();}, []);
     useEffect(() => {
         if (selectedFestivalId !== null) {
             loadExpenses(selectedFestivalId);
         }
     }, [selectedFestivalId]);
+
+    const loadCurrentUser = async () => {
+            try {
+                const token = localStorage.getItem("token");
+                if (!token) {
+                    navigate("/login");
+                    return;
+                }
+                const currentUser = await getCurrentUser(token);
+                setUser(currentUser);
+            } catch (error) {
+                console.error("Failed to load current user:",error);
+                localStorage.removeItem("token");
+                navigate("/login");
+            }
+        };
 
     const loadFestivals = async () => {
         try {
@@ -186,10 +203,27 @@ function ExpensesPage() {
                     </button>
                 </nav>
                 <div className="sidebar-bottom">
+
+                    {/* USER */}
+                    <div className="user-profile">
+                        <div className="user-avatar">
+                            {user?.name ?.charAt(0).toUpperCase() || "U"}
+                        </div>
+                        <div className="user-details">
+                            <div className="user-name">
+                                {user?.name || "User"}
+                            </div>
+                            <div className="user-email">
+                                {user?.email || ""}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* SIGN OUT */}
                     <button
                         className="sign-out-button"
                         onClick={handleSignOut}>
-                        <span>↪</span>Sign out
+                            <span>↪</span>Sign out
                     </button>
                 </div>
             </aside>
